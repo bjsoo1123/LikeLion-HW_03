@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+    <div id="box">
+        <div class="box-header">
+            <br>
+            <h1>수정하기</h1>
+        </div>
+        
+        <div class="box-body">
+            <div class="selector">
+                <p>{{ product.name }}님의</p>
+                <p>좋아하는 영화장르와 영화를 입력해주세요.</p>
+                <form action="{% url 'products:update' product.pk %}" method="POST">
+                                    <!-- namespace -->
+                    {% csrf_token %}
+                    <label>장르 입력:</label><input type="text" name="genre" value="{{ product.genre }}"><br><br>
+                    <label>영화 입력:</label><input type="text" name="movie" value="{{ product.movie }}"><br><br>
+                    <label>한 줄평:</label><textarea name="description">{{ product.description }}</textarea><br><br>
+                    <input type="submit" value="Next"/>
+                </form>
+                <br>
+                <a href="https://www.instagram.com/b_jungsoo1123" class="btn">Exit</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

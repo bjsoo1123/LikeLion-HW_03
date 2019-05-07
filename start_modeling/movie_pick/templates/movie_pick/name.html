@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+    <div id="box">
+        <div class="box-header">
+            <br>
+            <h1>Hi</h1>
+        </div>
+        
+        <div class="box-body">
+            <div class="selector">
+                <p>이름을 적어주세요!</p>
+                <br>
+                <form action="{% url 'products:main' %}" method="POST">
+                                    <!-- namespace -->
+                    {% csrf_token %}
+                    <input type="text" name="name"/>
+                    <input type="submit" value="Next"/>
+                </form><br><br>
+                <a href="https://www.instagram.com/b_jungsoo1123" class="btn">Exit</a>
+                <a href="list/" class="btn">List</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

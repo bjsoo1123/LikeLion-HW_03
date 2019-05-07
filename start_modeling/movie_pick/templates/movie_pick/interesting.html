@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<body>
+    <div id="box">
+        <div class="box-header">
+            <br>
+            <h1>오호라...</h1>
+        </div>
+        <div class="box-body">
+            <div class="selector">
+                <p>{{ product.name }}님께서 좋아하시는 영화장르는 {{ product.genre }}이고 특히 좋아하는 영화는 {{ product.movie }}이네요!</p>
+                <br>
+                <p>TMI지만 전 영화보는 것을 좋아합니다.</p>
+                <p>제가 추천한 영화를 한번 보시겠어요?</p>
+                <br>
+                <p>저에게 관심이 없으시다면</p>
+                <p>다른 사람이 추천한 영화를 보여드릴게요..</p><br>
+                <a href="/list" class="btn">Others</a>
+                <a href="https://www.instagram.com/b_jungsoo1123" class="btn">Exit</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

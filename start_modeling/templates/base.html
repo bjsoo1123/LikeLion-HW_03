@@ -1,0 +1,83 @@
+{% load static from staticfiles %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- 아래 한 줄 코드 추가 -->
+    <link rel="stylesheet" href="{% static 'css/project.css' %}">
+    
+    <style type="text/css">
+    
+        @font-face { font-family: 'netmarbleB'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.1/netmarbleB.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+        
+        body{
+        background-color: black;
+        margin: 7%;
+        }
+      
+        
+        .box-header{
+          padding: 1%;
+          background-color: black;
+          font-family: 'netmarbleB';
+        }
+        
+        .btn{
+        background-color: white;
+        color: black;
+        margin: 2px;
+        }
+        
+        #box{
+            margin: auto;
+            box-sizing: content-box;
+            width: 500px;
+            height: 350px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: 'netmarbleB'
+        }
+        
+        .box-body{
+            margin: auto;
+            font-family: 'netmarbleB'
+        }
+        
+        .selector {
+            word-break:keep-all;
+        }
+        
+        .modal-content{
+            background-color: black;
+            border-radius: 25px;
+            border: 2px solid #FFFFFF;
+            padding: 20px;
+            
+        }
+        
+        
+    </style>
+    <title>Like_Movie</title>
+    
+  </head>
+  <body>
+     <!-- 아래 두 줄 코드 추가 -->
+    {% block content %}
+    
+    {% endblock %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

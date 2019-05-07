@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+        <div class="box-body">
+            <div class="selector">
+
+            </div>
+        </div>
+<body>
+    <div id="box">
+        <div class="selector">
+            <h2>영화 상세 페이지 입니다.</h2><br>
+            <h4>장르 : {{ product.genre }}</h4>
+            <h4>추천 영화 : {{ product.movie }}</h4><br>
+            <p>한 줄 평 : {{ product.description }}</p><br>
+            <a href="{% url 'products:edit' product.pk %}" class="btn">수정</a>
+            <a href="#" class="btn" data-toggle="modal" data-target="#exampleModal">삭제</a>
+            <br><br>
+            <a href="{% url 'products:list' %}" class="btn">Back</a>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5>정말 삭제하시겠습니까?</h5>
+                  </div>
+                  
+                  <div class="modal-body">
+                      <div class="container">
+                          <div class="row">
+                            <div class="col">
+                                <button type="button" class="btn" data-dismiss="modal">취소</button>
+                                <!-- a 링크로는 get방식으로밖에 못 보내기 때문에 POST 방식으로 보낸다. -->
+                            </div>
+                            <div class="col">
+                                <form action="{% url 'products:delete' product.pk %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="submit" value="삭제" class="btn">
+                                </form>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+            
+            
+        </div>
+    </div>
+</body>
+    
+{% endblock %}
